@@ -122,6 +122,7 @@ services:
     volumes:
        - ./config/search:/config
        - ./data/files:/data
+       - ./data/tika_cache:/cache
     environment:
       NUMBER_OF_THREADS: 4
       JRUBY_OPTIONS: "-J-Xmx8g" # overwrite for development
