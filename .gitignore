@@ -1,6 +1,7 @@
 # Virtuoso files /data/db
 /data/db/*
 /data/elasticsearch/*
+/data/tika_cache/*
 !/data/db/virtuoso.ini
 !/data/db/toLoad
 !/data/db/toLoad/*
