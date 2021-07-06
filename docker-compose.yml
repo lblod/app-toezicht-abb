@@ -36,6 +36,7 @@ services:
     image: semtech/mu-authorization:0.6.0-beta.5
     environment:
       MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
+      DATABASE_OVERLOAD_RECOVERY: "true"
     volumes:
       - ./config/authorization:/config
     labels:
@@ -49,6 +50,8 @@ services:
       DEFAULT_GRAPH: "http://mu.semte.ch/application"
     volumes:
       - ./data/db:/data
+      - ./config/virtuoso/virtuoso.ini:/data/virtuoso.ini # Note: on production override this setting
+      - ./config/virtuoso/:/opt/virtuoso-scripts
     labels:
       - "logging=true"
     restart: always
