@@ -1,0 +1,11 @@
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b> {
+    #TRUPARK
+    <http://data.lblod.info/id/bestuurseenheden/1da9a37e-425e-44d7-b81d-21c990e75533> <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/7e2b965e-c824-474f-b5d5-b1c115740083>;
+                                                                                      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/7e2b965e-c824-474f-b5d5-b1c115740083>.
+
+    #BELEKO
+    <http://data.lblod.info/id/bestuurseenheden/3a12adea-221a-4a11-8961-3503598bbaf7> <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/7e2b965e-c824-474f-b5d5-b1c115740083>;
+                                                                                      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/7e2b965e-c824-474f-b5d5-b1c115740083>.
+  }
+}
