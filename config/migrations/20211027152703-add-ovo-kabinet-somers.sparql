@@ -1,0 +1,12 @@
+INSERT {
+
+ GRAPH ?g {
+   <http://data.lblod.info/id/bestuurseenheden/141d9d6b-54af-4d17-b313-8d1c30bc3f5b> <http://purl.org/dc/terms/identifier> """OVO028736""".
+ }
+
+}
+WHERE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/bestuurseenheden/141d9d6b-54af-4d17-b313-8d1c30bc3f5b> ?p ?o.
+  }
+}
