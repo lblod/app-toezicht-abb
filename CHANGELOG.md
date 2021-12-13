@@ -1,4 +1,7 @@
 # Changelog
+## 1.21.2 (2021-12-13)
+### :house: Internal
+- Bump mu-search to counter CVE-2021-44228
 
 ## 1.21.1 (2021-12-06)
 ### :house: Internal
