@@ -1,4 +1,9 @@
 # Changelog
+
+## 1.21.3 (2021-12-14)
+### :house: Internal
+- Bump virtuoso to the latest version used in house
+
 ## 1.21.2 (2021-12-13)
 ### :house: Internal
 - Bump mu-search to counter CVE-2021-44228
