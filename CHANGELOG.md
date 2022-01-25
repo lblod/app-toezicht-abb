@@ -1,4 +1,9 @@
 # Changelog
+## 1.22.0 (2022-01-25)
+### :house: Internal
+- Re-organize migrations
+- Added new forms
+- bumped enrich-submissions
 
 ## 1.21.3 (2021-12-14)
 ### :house: Internal
