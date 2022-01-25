@@ -1,0 +1,49 @@
+PREFIX nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dbpedia: <http://dbpedia.org/resource/>
+
+DELETE {
+
+  GRAPH <http://mu.semte.ch/graphs/public> {
+   ?s a nfo:FileDataObject ;
+          dct:type <http://data.lblod.gift/concepts/form-file-type> ;
+                                  mu:uuid ?uuid ;
+                                  nfo:fileName ?name ;
+                                  dct:created ?created ;
+                                  dct:modified ?modified ;
+                                  dct:format ?format;
+                                  nfo:fileSize ?size;
+                                  dbpedia:fileExtension ?extension .
+  }
+
+}
+INSERT {
+
+  GRAPH <http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b> {
+   ?s a nfo:FileDataObject ;
+          dct:type <http://data.lblod.gift/concepts/form-file-type> ;
+                                  mu:uuid ?uuid ;
+                                  nfo:fileName ?name ;
+                                  dct:created ?created ;
+                                  dct:modified ?modified ;
+                                  dct:format ?format;
+                                  nfo:fileSize ?size;
+                                  dbpedia:fileExtension ?extension .
+  }
+
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+   ?s a nfo:FileDataObject ;
+          dct:type <http://data.lblod.gift/concepts/form-file-type> ;
+                                  mu:uuid ?uuid ;
+                                  nfo:fileName ?name ;
+                                  dct:created ?created ;
+                                  dct:modified ?modified ;
+                                  dct:format ?format;
+                                  nfo:fileSize ?size;
+                                  dbpedia:fileExtension ?extension .
+  }
+}
