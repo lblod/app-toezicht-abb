@@ -1,4 +1,6 @@
 # Changelog
+## 1.23.0 (2022-02-18)
+- Added new forms
 ## 1.22.0 (2022-01-25)
 ### :house: Internal
 - Re-organize migrations
