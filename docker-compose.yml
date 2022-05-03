@@ -9,7 +9,7 @@ x-logging:
 
 services:
   toezicht-abb:
-    image: lblod/frontend-toezicht-abb:0.25.6
+    image: lblod/frontend-toezicht-abb:0.25.8
     volumes:
       - ./config/frontend:/config
     labels:
