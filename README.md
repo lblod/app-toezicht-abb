@@ -34,7 +34,7 @@ The app will mount a folder used by `app-digitaal-loket`. Therefore, a specific 
       - /absolute/path/to/app-digitaal-loket-qa/data/exports/submissions:/data/imports
   enrich-submission:
     volumes:
-      - /absolute/path/to/app-digitaal-loket-qa/data/files/submissions:/share/submission
+      - /absolute/path/to/app-digitaal-loket-qa/data/files/submissions:/share/submissions
 ```
 
 #### Step 1: Export
@@ -305,7 +305,7 @@ cd app-toezicht-abb
 
 docker-compose up -d
 
-docker-compose exec export-submissions bash
+docker-compose exec import bash
 ```
 In the containter, run the following:
 ```
