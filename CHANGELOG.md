@@ -1,4 +1,6 @@
 # Changelog
+## 1.25.0 (2022-07-27)
+- Added new forms
 ## 1.24.0 (2022-05-03)
 - Added new forms (for erediensten)
 - bump frontend (so ember-submission-form-fields gets updated to latest)
