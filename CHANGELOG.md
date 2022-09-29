@@ -1,4 +1,6 @@
 # Changelog
+## 1.25.1 (2022-09-29)
+- Update OVO Kabinet Somers
 ## 1.25.0 (2022-07-27)
 - Added new forms
 ## 1.24.0 (2022-05-03)
