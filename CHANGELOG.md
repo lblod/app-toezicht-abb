@@ -1,4 +1,7 @@
 # Changelog
+## 1.25.2 (2022-10-06)
+### :bug: Bug fix
+- Allow users to load more "bestuurseenheden" in the select filter
 ## 1.25.1 (2022-09-29)
 - Update OVO Kabinet Somers
 ## 1.25.0 (2022-07-27)
