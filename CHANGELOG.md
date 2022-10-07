@@ -1,4 +1,6 @@
 # Changelog
+## 1.26.0 (2022-10-07)
+- update formsp
 ## 1.25.1 (2022-09-29)
 - Update OVO Kabinet Somers
 ## 1.25.0 (2022-07-27)
