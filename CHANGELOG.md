@@ -1,4 +1,6 @@
 # Changelog
+## 1.26.0 (2022-10-07)
+- update forms
 ## 1.25.2 (2022-10-06)
 ### :bug: Bug fix
 - Allow users to load more "bestuurseenheden" in the select filter
