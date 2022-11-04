@@ -1,0 +1,7 @@
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b> {
+    #Welzijnsvereniging de Wijngaard
+    <http://data.lblod.info/id/bestuurseenheden/530dbb2c-a798-4cae-b42e-737b80b83b22> <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/7e2b965e-c824-474f-b5d5-b1c115740083>;
+                                                                                      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/7e2b965e-c824-474f-b5d5-b1c115740083>.
+  }
+}
