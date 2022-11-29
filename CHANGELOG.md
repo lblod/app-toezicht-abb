@@ -1,7 +1,7 @@
 # Changelog
 ## 1.27.0 (2022-11-29)
 - update file model `dct:created`
-- added LEKP forms
+- update forms
 - added Welzijnsvereniging de Wijngaard
 ## 1.26.0 (2022-10-07)
 - update forms
