@@ -1,4 +1,7 @@
 # Changelog
+## 1.27.1 (2022-12-20)
+### submissions
+ - Due to various issues after a batch sent in prod of automatic submission, we removed them to try again
 ## 1.27.0 (2022-11-29)
 - update file model `dct:created`
 - update forms
