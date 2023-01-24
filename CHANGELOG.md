@@ -1,4 +1,6 @@
 # Changelog
+## 1.28.0 (2023-01-24)
+ - Update forms (going to prod with erediensten)
 ## 1.27.1 (2022-12-20)
 ### submissions
  - Due to various issues after a batch sent in prod of automatic submission, we removed them to try again
