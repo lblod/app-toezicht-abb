@@ -1,6 +1,7 @@
 # Changelog
-## Unreleased
-- frontend maintenance
+## 1.29.1 (2023-04-08)
+ - bump frontend
+ - adjusted schorsing beslissing eredienstbesturen form for deputatie
 ## 1.29.0 (2023-02-07)
  - Update forms
 ## 1.28.0 (2023-01-24)
