@@ -1,4 +1,7 @@
 # Changelog
+## 1.31.0 (2023-05-15)
+- migrations to fix labels
+- migrations to fix issues vendor-data-distribution-service
 ## 1.30.0 (2023-04-24)
 - update forms
 ## 1.29.1 (2023-04-08)
