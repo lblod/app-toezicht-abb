@@ -1,0 +1,24 @@
+# migration to correct data related to the vendor-data-distribution-service
+DELETE {
+  GRAPH ?g {
+    ?submission <http://www.w3.org/ns/adms#status> ?status.
+  }
+}
+INSERT {
+  GRAPH ?g {
+    ?submission <http://www.w3.org/ns/adms#status> <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>.
+  }
+}
+WHERE {
+  {
+    SELECT DISTINCT ?submission COUNT(DISTINCT ?status) as ?countStatus {
+    ?submission a <http://rdf.myexperiment.org/ontologies/base/Submission>;
+      <http://www.w3.org/ns/adms#status> ?status.
+   }
+   GROUP BY ?submission
+  }
+  FILTER(?countStatus > 1)
+  GRAPH ?g {
+    ?submission <http://purl.org/dc/terms/modified> ?modified.
+  }
+}
