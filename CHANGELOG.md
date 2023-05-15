@@ -1,4 +1,6 @@
 # Changelog
+## 1.31.1 (2023-05-15)
+- fix migration
 ## 1.31.0 (2023-05-15)
 - migrations to fix labels
 - migrations to fix issues vendor-data-distribution-service
