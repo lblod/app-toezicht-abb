@@ -19,6 +19,6 @@ WHERE {
   }
   FILTER(?countStatus > 1)
   GRAPH ?g {
-    ?submission <http://purl.org/dc/terms/modified> ?modified.
+    ?submission <http://www.w3.org/ns/adms#status> ?status.
   }
 }
