@@ -1,4 +1,7 @@
 # Changelog
+## 1.32.0 (2023-06-20)
+- bump search to 0.9.0-beta.6
+- bump frontend to 0.26.1
 ## 1.31.1 (2023-05-15)
 - fix migration
 ## 1.31.0 (2023-05-15)
