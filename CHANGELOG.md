@@ -1,4 +1,11 @@
 # Changelog
+## 1.33.0 (2023-07-01)
+- new forms
+- bump frontend
+### deploy instructions
+```
+drc restart migrations enrich-submissions resource cache; drc up -d
+```
 ## 1.32.2 (2023-06-26)
 - bump frontend to 0.26.2
 
