@@ -1,4 +1,6 @@
 # Changelog
+## 1.34.0 (2023-08-30)
+- migration to add bestuurseenheden to selectbox
 ## 1.33.0 (2023-07-01)
 - new forms
 - bump frontend
