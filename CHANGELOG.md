@@ -1,4 +1,10 @@
 # Changelog
+## 1.35.0 (2023-10-17)
+- update forms
+- bump frontend
+
+### deploy instructions
+- drc up -d toezicht-abb ; drc restart migrations 
 ## 1.34.0 (2023-08-30)
 - migration to add bestuurseenheden to selectbox
 ## 1.33.0 (2023-07-01)
