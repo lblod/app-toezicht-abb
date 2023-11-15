@@ -1,4 +1,8 @@
 # Changelog
+## 1.36.0 (2023-11-15)
+- update forms
+### deploy instructions
+- drc up -d enrich-submission; drc restart migrations resource cache
 ## 1.35.0 (2023-10-17)
 - update forms
 - bump frontend
