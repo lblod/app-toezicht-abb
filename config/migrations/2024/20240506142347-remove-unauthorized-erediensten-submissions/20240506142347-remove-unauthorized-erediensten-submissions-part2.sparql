@@ -1,0 +1,44 @@
+PREFIX meb: <http://rdf.myexperiment.org/ontologies/base/>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX melding: <http://lblod.data.gift/vocabularies/automatische-melding/>
+PREFIX nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>
+PREFIX nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX adms: <http://www.w3.org/ns/adms#>
+PREFIX ere: <http://data.lblod.info/vocabularies/erediensten/>
+DELETE {
+  GRAPH ?g {
+    ?submissionTask ?submissionTaskP ?submissionTaskO.
+  }
+}
+WHERE {
+  VALUES ?submissionDocumentDecision {
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/14793940-5b9c-4172-b108-c73665ad9d6a>
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/651525f8-8650-4ce8-8eea-f19b94d50b73>
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/ce569d3d-25ff-4ce9-a194-e77113597e29>
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/18833df2-8c9e-4edd-87fd-b5c252337349>
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/2c9ada23-1229-4c7e-a53e-acddc9014e4e>
+    <https://data.vlaanderen.be/id/concept/BesluitType/d85218e2-a75f-4a30-9182-512b5c9dd1b2>
+    <https://data.vlaanderen.be/id/concept/BesluitType/d463b6d1-c207-4c1a-8c08-f2c7dd1fa53b>
+    <https://data.vlaanderen.be/id/concept/BesluitType/2b12630f-8c4e-40a4-8a61-a0c45621a1e6>
+    <https://data.vlaanderen.be/id/concept/BesluitType/0fc2c27d-a03c-4e3f-9db1-f10f026f76f8>
+    <https://data.vlaanderen.be/id/concept/BesluitType/e44c535d-4339-4d15-bdbf-d4be6046de2c>
+  }
+  ?eenheid a ?ereType.
+  FILTER (?ereType IN (ere:BestuurVanDeEredienst, ere:CentraalBestuurVanDeEredienst, ere:RepresentatiefOrgaan))
+  GRAPH ?g {
+
+   ?submission a meb:Submission;
+     <http://purl.org/pav/createdBy> ?eenheid;
+     dct:subject ?submissionDocument;
+     adms:status ?status;
+     prov:generated ?formData;
+     ?submissionP ?submissionO.
+    FILTER EXISTS {?formData dct:type ?submissionDocumentDecision.}
+     ?submissionTask a melding:AutomaticSubmissionTask.
+     ?submissionTask prov:generated ?submission;
+       ?submissionTaskP ?submissionTaskO.
+   }
+}
