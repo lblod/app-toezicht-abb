@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.39.0 (2024-05-16)
 
 ### General
 - Update forms
