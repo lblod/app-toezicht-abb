@@ -1,4 +1,6 @@
 # Changelog
+## 1.40.0 (2024-06-14)
+ - Remove multiple besluittypes that don't belong in this application. [DL-5861]
 ## 1.39.1 (2024-05-29)
   - Fix custom info label field in forms LEKP-rapport - Melding correctie authentieke bron and LEKP-rapport - Toelichting Lokaal Bestuur (DL-5934)
 ### Deploy Notes
