@@ -133,16 +133,24 @@ services:
     environment:
       NUMBER_OF_THREADS: 16 # overwrite for development
       JRUBY_OPTIONS: "-J-Xmx16g" # overwrite for development
+    labels:
+      - "logging=true"
     restart: always
     logging: *default-logging
   tika:
     image: apache/tika:1.28.3-full
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
   elasticsearch:
     image: semtech/mu-search-elastic-backend:1.0.1
     volumes:
       - ./data/elasticsearch/:/usr/share/elasticsearch/data
     environment:
       - discovery.type=single-node
+    labels:
+      - "logging=true"
     restart: always
     logging: *default-logging
   enrich-submission:
