@@ -1,4 +1,9 @@
 # Changelog
+## 1.40.1 (2024-08-12)
+ - Add missing `restart`, `labels` and `logging` keys. [DL-6095]
+### Deploy Notes
+#### Docker Commands
+ - `drc up -d search tika elasticsearch`
 ## 1.40.0 (2024-06-14)
  - Remove multiple besluittypes that don't belong in this application. [DL-5861]
 ## 1.39.1 (2024-05-29)
@@ -42,7 +47,7 @@
 - bump frontend
 
 ### deploy instructions
-- drc up -d toezicht-abb ; drc restart migrations 
+- drc up -d toezicht-abb ; drc restart migrations
 ## 1.34.0 (2023-08-30)
 - migration to add bestuurseenheden to selectbox
 ## 1.33.0 (2023-07-01)
