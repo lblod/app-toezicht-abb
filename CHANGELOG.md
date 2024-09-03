@@ -1,4 +1,10 @@
 # Changelog
+## 1.40.2 (2024-09-03)
+ - Remove duplicate URI for IBEG. (DL-5770)
+### Deploy Notes
+#### Docker Commands
+ - `drc restart migrations && drc logs -ft --tail=200 migrations`
+ - `drc restart resource cache`
 ## 1.40.1 (2024-08-12)
  - Add missing `restart`, `labels` and `logging` keys. [DL-6095]
 ### Deploy Notes
