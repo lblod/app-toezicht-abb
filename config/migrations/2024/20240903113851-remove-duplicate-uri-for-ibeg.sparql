@@ -21,6 +21,52 @@ WHERE {
 
 ;
 
+# Remove properties pointing to old bestuursorgaan in tijd and route them to the new URI
+
+DELETE {
+  GRAPH ?g {
+    ?s <http://data.europa.eu/eli/ontology#passed_by> ?oldBestuursorgaanInTijd .
+  }
+}
+INSERT {
+  GRAPH ?g {
+    ?s <http://data.europa.eu/eli/ontology#passed_by> ?newBestuursorgaanInTijd .
+  }
+}
+WHERE {
+  BIND(<http://data.lblod.info/id/bestuursorganen/7264b6d0-f123-493a-8fe2-4802b5be1aec> AS ?oldBestuursorgaanInTijd)
+  BIND(<http://data.lblod.info/id/bestuursorganen/288c0d58-079c-46e2-82ab-4ce4f987d0ab> AS ?newBestuursorgaanInTijd)
+
+  GRAPH ?g {
+    ?s <http://data.europa.eu/eli/ontology#passed_by> ?oldBestuursorgaanInTijd .
+  }
+}
+
+;
+
+# Remove properties pointing to old bestuursorgaan in tijd and route them to the new URI
+
+DELETE {
+  GRAPH ?g {
+    ?s <http://data.europa.eu/eli/ontology#passed_by> ?oldBestuursorgaanInTijd .
+  }
+}
+INSERT {
+  GRAPH ?g {
+    ?s <http://data.europa.eu/eli/ontology#passed_by> ?newBestuursorgaanInTijd .
+  }
+}
+WHERE {
+  BIND(<http://data.lblod.info/id/bestuursorganen/7ac7d2cb-5fc6-4f36-a6dd-8813cd3e6f3a> AS ?oldBestuursorgaanInTijd)
+  BIND(<http://data.lblod.info/id/bestuursorganen/ecf12998-e29d-4c8c-98b6-f5f7d92f3e4a> AS ?newBestuursorgaanInTijd)
+
+  GRAPH ?g {
+    ?s <http://data.europa.eu/eli/ontology#passed_by> ?oldBestuursorgaanInTijd .
+  }
+}
+
+;
+
 # Delete old bestuursorganen
 
 DELETE {
