@@ -1,4 +1,15 @@
 # Changelog
+
+## 1.40.4 (2024-09-04)
+
+- Bump `enrich-submission-service` and add new form file (DL-5930)
+
+### Deploy Notes
+
+Make sure that at least https://github.com/lblod/app-digitaal-loket/pull/596 is
+deployed as well. Otherwise, the migration in these last releases needs to be
+re-executed.
+
 ## 1.40.3 (2024-09-03)
  - Fix duplicate URI for IBEG migration. (DL-5770)
 ### Deploy Notes
