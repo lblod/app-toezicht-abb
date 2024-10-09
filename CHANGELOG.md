@@ -1,8 +1,8 @@
 # Changelog
 
-## 1.40.4 (2024-09-04)
+## 1.40.4 (2024-10-09)
 
-- Bump `enrich-submission-service` and add new form file (DL-5930)
+- Bumped `enrich-submission-service` and add new form file (DL-5930)
 
 ### Deploy Notes
 
