@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.40.5 (2024-11-08)
+
+- Remove more eredienst besluittypes. (DL-6234)
+
+### Deploy notes
+
+Make sure migrations are properly run.
+
 ## 1.40.4 (2024-10-09)
 
 - Bumped `enrich-submission-service` and add new form file (DL-5930)
