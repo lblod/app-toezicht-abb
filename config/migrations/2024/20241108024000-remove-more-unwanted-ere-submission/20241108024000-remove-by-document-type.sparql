@@ -1,0 +1,58 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX melding: <http://lblod.data.gift/vocabularies/automatische-melding/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX adms: <http://www.w3.org/ns/adms#>
+PREFIX meb: <http://rdf.myexperiment.org/ontologies/base/>
+PREFIX eli: <http://data.europa.eu/eli/ontology#>
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+
+DELETE {
+  GRAPH ?g {
+    ?submission ?sp ?so .
+    ?submissionDocument ?sdp ?sdo .
+    ?formData ?fdp ?fdo .
+  }
+}
+WHERE {
+  VALUES ?notAllowedTypeBesluit {
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/bea3944f-4f6d-4d2c-9a6e-23264859e1e5>
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/1d14cb62-7e57-44a9-ad20-2b08407fbb84>
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/91b8b15f-7631-4a21-9a90-489f5c91e73c>
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/3a3ea43f-6631-4a7d-94c6-3a77a445d450>
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/24743b26-e0fb-4c14-8c82-5cd271289b0e>
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/863caf68-97c9-4ee0-adb5-620577ea8146>
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/14793940-5b9c-4172-b108-c73665ad9d6a>
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/651525f8-8650-4ce8-8eea-f19b94d50b73>
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/ce569d3d-25ff-4ce9-a194-e77113597e29>
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/18833df2-8c9e-4edd-87fd-b5c252337349>
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/2c9ada23-1229-4c7e-a53e-acddc9014e4e>
+    <https://data.vlaanderen.be/id/concept/BesluitType/d85218e2-a75f-4a30-9182-512b5c9dd1b2>
+    <https://data.vlaanderen.be/id/concept/BesluitType/d463b6d1-c207-4c1a-8c08-f2c7dd1fa53b>
+    <https://data.vlaanderen.be/id/concept/BesluitType/2b12630f-8c4e-40a4-8a61-a0c45621a1e6>
+    <https://data.vlaanderen.be/id/concept/BesluitType/0fc2c27d-a03c-4e3f-9db1-f10f026f76f8>
+    <https://data.vlaanderen.be/id/concept/BesluitType/df261490-cc74-4f80-b783-41c35e720b46>
+    <https://data.vlaanderen.be/id/concept/BesluitType/3fcf7dba-2e5b-4955-a489-6dd8285c013b>
+  }
+  GRAPH ?g {
+    ?formData
+      a melding:FormData ;
+      dct:type ?notAllowedTypeBesluit .
+
+    ?submission
+      dct:subject ?submissionDocument ;
+      prov:generated ?formData ;
+      adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> ;
+      a meb:Submission .
+
+    {
+      ?submission ?sp ?so .
+    } UNION {
+      ?submissionDocument ?sdp ?sdo .
+    } UNION {
+      ?formData ?fdp ?fdo .
+    }
+  }
+}
