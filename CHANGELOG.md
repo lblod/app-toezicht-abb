@@ -1,4 +1,8 @@
 # Changelog
+## 1.40.7 (2024-11-14)
+### Toezicht
+ - Frontend [v0.28.2](https://github.com/lblod/frontend-toezicht-abb/blob/master/CHANGELOG.md#v0282-2024-11-14) (DL-5435)
+# Changelog
 ## 1.40.6 (2024-11-13)
 ### Toezicht
  - Update URI form "Aangewezen Burgemeester" [DL-6298]
