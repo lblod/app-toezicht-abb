@@ -1,4 +1,7 @@
 # Changelog
+## Unreleased
+- New semantic form `Kerkenbeleidsplan`
+- New semantic forms for cross referencing
 ## 1.40.7 (2024-11-14)
 ### Toezicht
  - Frontend [v0.28.2](https://github.com/lblod/frontend-toezicht-abb/blob/master/CHANGELOG.md#v0282-2024-11-14) (DL-5435)
