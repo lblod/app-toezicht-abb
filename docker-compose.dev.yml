@@ -25,3 +25,5 @@ services:
     environment:
       NUMBER_OF_THREADS: 4 # overwrite for development
       JRUBY_OPTIONS: "-J-Xmx8g" # overwrite for development
+  worship-decisions-cross-reference:
+    restart: "no"
