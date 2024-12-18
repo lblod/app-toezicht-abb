@@ -1,4 +1,13 @@
 # Changelog
+
+## Unreleased
+- Add cross referencing service and config [#48]
+
+### Deploy notes
+#### Docker Commands
+- `drc restart migrations dispatcher`
+- `drc up -d worship-decisions-cross-reference`
+
 ## v1.40.8 (2024-12-13)
 - New semantic form `Kerkenbeleidsplan`
 - New semantic forms for cross referencing
