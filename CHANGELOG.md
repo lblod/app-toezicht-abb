@@ -20,7 +20,7 @@ The following links;
 
 #### Docker Commands
 - `drc restart migrations dispatcher`
-- `drc up -d worship-decisions-cross-reference`
+- `drc up -d toezicht-abb worship-decisions-cross-reference`
 
 ## v1.40.8 (2024-12-13)
 - New semantic form `Kerkenbeleidsplan`
