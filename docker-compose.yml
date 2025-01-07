@@ -9,7 +9,7 @@ x-logging:
 
 services:
   toezicht-abb:
-    image: lblod/frontend-toezicht-abb:0.28.2
+    image: lblod/frontend-toezicht-abb:0.29.0
     volumes:
       - ./config/frontend:/config
     labels:
@@ -179,6 +179,12 @@ services:
     image: lblod/toezicht-search-query-management-service:0.3.6
     volumes:
       - ./config/search-query:/share/search-query
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  worship-decisions-cross-reference:
+    image: lblod/worship-decisions-cross-reference-service:0.4.6
     labels:
       - "logging=true"
     restart: always
