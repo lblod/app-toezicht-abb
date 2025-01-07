@@ -1,7 +1,7 @@
 # Changelog
 
 ## Unreleased
-- Add cross referencing service and config [#48]
+- Add cross referencing service and config [DL-6352]
 
 ### Deploy notes
 #### docker-compose.override.yml
