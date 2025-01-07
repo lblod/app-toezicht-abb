@@ -4,6 +4,20 @@
 - Add cross referencing service and config [#48]
 
 ### Deploy notes
+#### docker-compose.override.yml
+##### worship-decisions-cross-reference
+Ensure the environment variables are correctly set for `worship-decisions-cross-reference`, e.g. :
+
+```
+worship-decisions-cross-reference:
+  environment:
+    WORSHIP_DECISIONS_BASE_URL: "https://databankerediensten.lokaalbestuur.vlaanderen.be/search/submissions/"
+```
+The following links;
+- DEV: "https://dev.databankerediensten.lokaalbestuur.lblod.info/search/submissions/"
+- QA: "https://databankerediensten.lokaalbestuur.lblod.info/search/submissions/"
+- PROD: "https://databankerediensten.lokaalbestuur.vlaanderen.be/search/submissions/"
+
 #### Docker Commands
 - `drc restart migrations dispatcher`
 - `drc up -d worship-decisions-cross-reference`
