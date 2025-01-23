@@ -1,5 +1,5 @@
 # Changelog
-## Unreleased
+## v1.41.0 (2025-01-23)
 - Add cross referencing service and config [DL-6352]
 
 ### Deploy notes
