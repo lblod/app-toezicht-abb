@@ -1,0 +1,22 @@
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+CONSTRUCT {
+  ?s ?p ?o.
+} WHERE {
+  ?s a besluit:Bestuursorgaan;
+    ?p ?o.
+
+  FILTER (?p IN (
+    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>,
+    mu:uuid,
+    skos:prefLabel,
+    mandaat:bindingEinde,
+    mandaat:bindingStart,
+    besluit:bestuurt,
+    besluit:classificatie,
+    mandaat:isTijdspecialisatieVan
+  ))
+}

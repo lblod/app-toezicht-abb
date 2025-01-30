@@ -1,0 +1,18 @@
+PREFIX ere: <http://data.lblod.info/vocabularies/erediensten/>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX org: <http://www.w3.org/ns/org#>
+
+CONSTRUCT {
+  ?s ?p ?o.
+} WHERE {
+  ?s a ere:BetrokkenLokaleBesturen;
+    ?p ?o.
+
+  FILTER (?p IN (
+    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>,
+    mu:uuid,
+    ere:financieringspercentage,
+    ere:typebetrokkenheid,
+    org:organization
+  ))
+}

@@ -1,4 +1,57 @@
 # Changelog
+## Unreleased
+- Sync from OP public [DL-6394]
+
+### Deploy notes
+```
+drc down;
+```
+Update `docker-compose.override.yml` to remove the config of `op-public-consumer` and replace it by:
+```
+  op-public-consumer:
+    environment:
+      DCR_SYNC_BASE_URL: "https://organisaties.abb.vlaanderen.be" # or another endpoint
+      DCR_LANDING_ZONE_DATABASE: "virtuoso" # for the initial sync, we go directly to virtuoso
+      DCR_REMAPPING_DATABASE: "virtuoso" # for the initial sync, we go directly to virtuoso
+      DCR_DISABLE_INITIAL_SYNC: "false"
+      DCR_DISABLE_DELTA_INGEST: "true"
+```
+Then:
+```
+drc up -d virtuoso migrations
+drc up -d database op-public-consumer
+# Wait until success of the previous step
+```
+Then, update `docker-compose.override.yml` to:
+```
+  op-public-consumer:
+    environment:
+      DCR_SYNC_BASE_URL: "https://organisaties.abb.vlaanderen.be" # or another endpoint
+      DCR_LANDING_ZONE_DATABASE: "database"
+      DCR_REMAPPING_DATABASE: "database"
+      DCR_DISABLE_DELTA_INGEST: "false"
+      DCR_DISABLE_INITIAL_SYNC: "false"
+```
+```
+drc up -d
+```
+
+Then run the following script to reindex the data
+
+```
+#!/bin/bash
+echo "Warning this will run queries on the triplestore and delete containers, you have 3 seconds to press ctrl+c"
+sleep 3
+docker compose rm -fs elasticsearch search
+sudo rm -rf data/elasticsearch/
+docker-compose exec -T virtuoso isql-v <<EOF
+SPARQL DELETE WHERE { GRAPH <http://mu.semte.ch/authorization> { ?s ?p ?o. } };
+exec('checkpoint');
+exit;
+EOF
+docker compose up -d
+```
+
 ## v1.41.0 (2025-01-23)
 - Add cross referencing service and config [DL-6352]
 
