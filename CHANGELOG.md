@@ -3,6 +3,9 @@
 - Sync from OP public [DL-6394]
 
 ### Deploy notes
+
+WARNING The sync should be deployed after https://github.com/lblod/app-digitaal-loket/pull/631
+
 ```
 drc down;
 ```
