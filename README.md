@@ -12,6 +12,45 @@ services:
 			- 4206:80
 ```
 
+## Setup the consumer
+
+When starting the application for the first time, you will need to sync the `besluit:Bestuurseenheid` from [app-organization-portal](https://github.com/lblod/app-organization-portal), else you won't be able to use the application. Here is how to proceed.
+
+```
+drc down;
+```
+Update `docker-compose.override.yml` to:
+```
+  op-public-consumer:
+    environment:
+      DCR_SYNC_BASE_URL: "https://organisaties.abb.vlaanderen.be" # or another endpoint
+      DCR_LANDING_ZONE_DATABASE: "virtuoso" # for the initial sync, we go directly to virtuoso
+      DCR_REMAPPING_DATABASE: "virtuoso" # for the initial sync, we go directly to virtuoso
+      DCR_DISABLE_DELTA_INGEST: "true"
+      DCR_DISABLE_INITIAL_SYNC: "false"
+```
+Then:
+```
+drc up -d migrations
+drc up -d database op-public-consumer
+# Wait until success of the previous step: the initial sync should end successfully
+```
+Then, update `docker-compose.override.yml` to:
+```
+  op-public-consumer:
+    environment:
+      DCR_SYNC_BASE_URL: "https://organisaties.abb.vlaanderen.be" # choose the correct endpoint
+      DCR_LANDING_ZONE_DATABASE: "database"
+      DCR_REMAPPING_DATABASE: "database"
+      DCR_DISABLE_DELTA_INGEST: "false"
+      DCR_DISABLE_INITIAL_SYNC: "false"
+```
+```
+drc up -d
+```
+
+You can then re-index the data, see the script at the end of this Readme.
+
 ## Trigger import-export flow from app-digitaal-loket
 
 The `app-toezicht-abb` consumes information produced by `app-digitaal-loket`.
@@ -87,11 +126,12 @@ To make it work, the index should be triggered, you can run and re-run the follo
 #!/bin/bash
 echo "Warning this will run queries on the triplestore and delete containers, you have 3 seconds to press ctrl+c"
 sleep 3
-docker-compose rm -fs elasticsearch search
+docker compose rm -fs elasticsearch search
 sudo rm -rf data/elasticsearch/
 docker-compose exec -T virtuoso isql-v <<EOF
 SPARQL DELETE WHERE {   GRAPH <http://mu.semte.ch/authorization> {     ?s ?p ?o.   } };
 exec('checkpoint');
 exit;
 EOF
+docker compose up -d
 ```

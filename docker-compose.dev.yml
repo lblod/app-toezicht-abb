@@ -27,3 +27,5 @@ services:
       JRUBY_OPTIONS: "-J-Xmx8g" # overwrite for development
   worship-decisions-cross-reference:
     restart: "no"
+  op-public-consumer:
+    restart: "no"
