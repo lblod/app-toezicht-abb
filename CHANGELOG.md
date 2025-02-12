@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Sync from OP public [DL-6394]
+- Add migration that removes two submissions from Gemeente Beveren that should have been submitted under the new fusie gemeent [DL-6431]
 
 ### Deploy notes
 
