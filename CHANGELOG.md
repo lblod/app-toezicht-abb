@@ -1,6 +1,9 @@
 # Changelog
+
 ## Unreleased
+
 - Sync from OP public [DL-6394]
+- Add migration that removes two submissions from Gemeente Beveren that should have been submitted under the new fusie gemeent [DL-6431]
 
 ### Deploy notes
 
@@ -19,13 +22,17 @@ Update `docker-compose.override.yml` to remove the config of `op-public-consumer
       DCR_DISABLE_INITIAL_SYNC: "false"
       DCR_DISABLE_DELTA_INGEST: "true"
 ```
+
 Then:
+
 ```
 drc up -d virtuoso migrations
 drc up -d database op-public-consumer
 # Wait until success of the previous step
 ```
+
 Then, update `docker-compose.override.yml` to:
+
 ```
   op-public-consumer:
     environment:
@@ -35,6 +42,7 @@ Then, update `docker-compose.override.yml` to:
       DCR_DISABLE_DELTA_INGEST: "false"
       DCR_DISABLE_INITIAL_SYNC: "false"
 ```
+
 ```
 drc up -d
 ```
