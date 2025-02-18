@@ -1,6 +1,7 @@
 # Changelog
 ## Unreleased
 - Sync from OP public [DL-6394]
+- Update semantic forms with `Opdrachthoudende vereniging met private deelname` classification. [DL-6447]
 
 ### Deploy notes
 
@@ -54,6 +55,10 @@ exit;
 EOF
 docker compose up -d
 ```
+
+#### Update Semantic Forms
+
+The changes here will automatically be picked up by the `op-public-consumer` changes above since the stack will be down-ed completely and started up again from scratch.
 
 ## v1.41.0 (2025-01-23)
 - Add cross referencing service and config [DL-6352]
