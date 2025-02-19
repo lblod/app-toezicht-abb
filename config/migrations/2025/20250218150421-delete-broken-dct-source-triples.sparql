@@ -1,0 +1,26 @@
+PREFIX dct: <http://purl.org/dc/terms/>
+
+# Due to a previous bug, this submission had more dct:source triples attached to it then it should have. 
+# This query deletes dct:source triples that are not in the list taken from app-digitaal-loket
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b> { # Beveren-Kruibeke-Zwijndrecht 
+    <https://data.beveren.be/id/besluiten/24.1219.9329.4965> dct:source ?o.
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b> { # Beveren-Kruibeke-Zwijndrecht 
+    <https://data.beveren.be/id/besluiten/24.1219.9329.4965> dct:source ?o.
+    
+    FILTER (
+      ?o NOT IN (
+        <share://semantic-forms/20241122103645-forms.ttl>,
+        <share://submissions/cffdc301-dcaa-11ef-be0f-df08d94b1ed9.ttl>,
+        <share://submissions/cc153e30-dcaa-11ef-9619-dd6560b7b0d1.ttl>,
+        <share://submissions/ce397dc1-dcaa-11ef-9143-0fd9176d3ded.ttl>,
+        <share://submissions/1d592891-dcad-11ef-be0f-df08d94b1ed9.ttl>,
+        <share://submissions/1d655d91-dcad-11ef-be0f-df08d94b1ed9.ttl>
+      )
+    )
+  }
+}
