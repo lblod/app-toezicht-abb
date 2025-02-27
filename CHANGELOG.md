@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v1.42.0 (2025-02-27)
 
 - Sync from OP public [DL-6394]
 - Add migration that removes two submissions from Gemeente Beveren that should have been submitted under the new fusie gemeent [DL-6431]
