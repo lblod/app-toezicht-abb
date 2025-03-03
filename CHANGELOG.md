@@ -1,5 +1,21 @@
 # Changelog
 
+## Unreleased
+
+- Bump `migrations` and `mock-login` services
+
+### Deploy Notes
+
+When deploying on servers not using mock-login:
+```
+drc up -d migrations
+```
+
+When deploying locally and on servers using mock-login:
+```
+drc up -d mocklogin
+```
+
 ## v1.42.0 (2025-02-27)
 
 - Sync from OP public [DL-6394]
