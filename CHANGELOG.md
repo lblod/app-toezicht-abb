@@ -13,7 +13,7 @@ drc up -d migrations
 
 When deploying locally and on servers using mock-login:
 ```
-drc up -d mocklogin
+drc up -d migrations mocklogin
 ```
 
 ## v1.42.0 (2025-02-27)
