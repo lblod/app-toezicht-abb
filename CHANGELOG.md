@@ -7,7 +7,7 @@
 
 ### Deploy Notes
 
-- Remove the frontend override from the docker-compose.override.yml file
+- Remove the frontend override from the docker-compose.override.yml file (QA only, PROD still requires a different -prod image, for now)
 
 When deploying on servers not using mock-login:
 ```
