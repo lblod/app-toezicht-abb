@@ -2,9 +2,10 @@
 
 ## Unreleased
 
-- Bump `migrations` and `mock-login` services
+- Bump `migrations` and `mock-login` services.
 - frontend [v0.29.1](https://github.com/lblod/frontend-toezicht-abb/blob/127bafb7a8e54f69a935435a098f52ac3b909749/CHANGELOG.md#v0291-2025-03-11)
 - Update op consumer config to avoid accidental deletes
+- Bump several services. [DL-6492]
 
 ### Deploy Notes
 
@@ -24,6 +25,14 @@ drc restart migrations; drc up -d mocklogin
 ```
 drc up -d op-public-consumer
 ```
+
+**For bumping services**
+```
+drc up -d identifier dispatcher database login cache resource file search deltanotifier
+```
+
+**For upgrading virtuoso**
+Follow the instructions listed here: [https://github.com/Riadabd/upgrade-virtuoso](https://github.com/Riadabd/upgrade-virtuoso).
 
 ## v1.42.0 (2025-02-27)
 
