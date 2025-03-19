@@ -1,0 +1,12 @@
+# Potentially too much data could habe been deleted due to delta-consumer mapping config issues.
+# This migration ensures target graph is in sync again.
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b> {
+    <http://data.vlaanderen.be/id/concept/RepresentatiefOrgaanClassificatieCode/89a00b5a-024f-4630-a722-65a5e68967e5> ?p ?o.
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/landing-zone/op-public> {
+    <http://data.vlaanderen.be/id/concept/RepresentatiefOrgaanClassificatieCode/89a00b5a-024f-4630-a722-65a5e68967e5> ?p ?o.
+  }
+}
