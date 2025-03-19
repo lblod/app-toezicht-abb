@@ -12,12 +12,12 @@
 
 When deploying on servers not using mock-login:
 ```
-drc up -d migrations
+drc restart migrations
 ```
 
 When deploying locally and on servers using mock-login:
 ```
-drc up -d migrations mocklogin
+drc restart migrations; drc up -d mocklogin
 ```
 
 - OP consumer update:
