@@ -31,6 +31,9 @@ drc up -d op-public-consumer
 drc up -d identifier dispatcher database login cache resource file search deltanotifier
 ```
 
+**For upgrading virtuoso**
+Follow the instructions listed here: [https://github.com/Riadabd/upgrade-virtuoso](https://github.com/Riadabd/upgrade-virtuoso).
+
 ## v1.42.0 (2025-02-27)
 
 - Sync from OP public [DL-6394]
