@@ -4,6 +4,7 @@
 
 - Bump `migrations` and `mock-login` services
 - frontend [v0.29.1](https://github.com/lblod/frontend-toezicht-abb/blob/127bafb7a8e54f69a935435a098f52ac3b909749/CHANGELOG.md#v0291-2025-03-11)
+- Update op consumer config to avoid accidental deletes
 
 ### Deploy Notes
 
@@ -11,12 +12,17 @@
 
 When deploying on servers not using mock-login:
 ```
-drc up -d migrations
+drc restart migrations
 ```
 
 When deploying locally and on servers using mock-login:
 ```
-drc up -d migrations mocklogin
+drc restart migrations; drc up -d mocklogin
+```
+
+- OP consumer update:
+```
+drc up -d op-public-consumer
 ```
 
 ## v1.42.0 (2025-02-27)
