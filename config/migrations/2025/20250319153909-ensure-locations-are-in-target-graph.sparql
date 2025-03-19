@@ -1,0 +1,38 @@
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b> {
+    ?s a <http://www.w3.org/ns/prov#Location>; ?p ?o
+  }
+}
+WHERE {
+  VALUES ?p {
+    <http://www.w3.org/2000/01/rdf-schema#label>
+    <http://mu.semte.ch/vocabularies/core/uuid>
+    <http://mu.semte.ch/vocabularies/ext/werkingsgebiedNiveau>
+    <http://www.opengis.net/ont/geosparql#sfWithin>
+    <http://www.w3.org/2004/02/skos/core#exactMatch>
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s a <http://www.w3.org/ns/prov#Location>; ?p ?o
+  }
+}
+
+;
+
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b> {
+    ?s a <http://www.w3.org/ns/prov#Location>; ?p ?o
+  }
+}
+WHERE {
+  VALUES ?p {
+    <http://www.w3.org/2000/01/rdf-schema#label>
+    <http://mu.semte.ch/vocabularies/core/uuid>
+    <http://mu.semte.ch/vocabularies/ext/werkingsgebiedNiveau>
+    <http://www.opengis.net/ont/geosparql#sfWithin>
+    <http://www.w3.org/2004/02/skos/core#exactMatch>
+  }
+  GRAPH <http://mu.semte.ch/graphs/landing-zone/op-public> {
+    ?s a <http://www.w3.org/ns/prov#Location>; ?p ?o
+  }
+}
