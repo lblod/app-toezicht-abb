@@ -2,8 +2,9 @@
 
 ## Unreleased
 
-- Bump `migrations` and `mock-login` services
+- Bump `migrations` and `mock-login` services.
 - frontend [v0.29.1](https://github.com/lblod/frontend-toezicht-abb/blob/127bafb7a8e54f69a935435a098f52ac3b909749/CHANGELOG.md#v0291-2025-03-11)
+- Bump several services. [DL-6492]
 
 ### Deploy Notes
 
@@ -17,6 +18,11 @@ drc up -d migrations
 When deploying locally and on servers using mock-login:
 ```
 drc up -d migrations mocklogin
+```
+
+**For bumping services**
+```
+drc up -d identifier dispatcher database login cache resource file search deltanotifier
 ```
 
 ## v1.42.0 (2025-02-27)
