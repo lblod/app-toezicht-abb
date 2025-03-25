@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.42.1 (2025-03-25)
+
+- Bump `op-public-consumer` to `v0.1.4`.
+
+### Deploy Notes
+
+```
+drc up -d op-public-consumer
+```
+
 ## v1.42.0 (2025-02-27)
 
 - Sync from OP public [DL-6394]
