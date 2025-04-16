@@ -1,5 +1,18 @@
 # Changelog
 
+## Unreleased
+
+- Update multiple forms. [DL-6602] [DL-6486] [DL-6487] [DL-6488]
+
+### Deploy Notes
+
+**For updating the forms**
+
+```
+drc restart migrations && drc logs -ft --tail=200 migrations
+drc up -d enrich-submission
+```
+
 ## v1.43.0 (2025-04-02)
 
 - Bump `migrations` and `mock-login` services.
