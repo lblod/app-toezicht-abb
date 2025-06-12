@@ -1,6 +1,6 @@
 # Changelog
 
-## unreleased
+## v1.46.0 (2025-06-12)
 
 ### General
 
