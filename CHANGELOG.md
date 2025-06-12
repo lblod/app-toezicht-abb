@@ -1,5 +1,18 @@
 # Changelog
 
+## unreleased
+
+### General
+
+- Update form of LEKP - Fietspaden [DL-6612]
+
+### Deploy Notes
+
+```
+drc restart migrations && drc logs -ft --tail=200 migrations
+drc up -d enrich-submission
+```
+
 ## v1.45.1 (2025-05-28)
 
 ### General
