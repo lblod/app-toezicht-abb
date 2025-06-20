@@ -1,22 +1,11 @@
 # Changelog
 
-## Unreleased (hotfix)
-
-### General
-
-- Remove document in submission from Gemeente Avelgem [DL-6691]
-
-### Deploy Notes
-
-```
-drc restart migrations && drc logs -ft --tail=200 migrations
-```
-
 ## v1.46.0 (2025-06-12)
 
 ### General
 
 - Update form of LEKP - Fietspaden [DL-6612]
+- Remove document in submission from Gemeente Avelgem [DL-6691]
 
 ### Deploy Notes
 
