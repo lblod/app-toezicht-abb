@@ -91,6 +91,8 @@
                              :as "werkingsgebied")
              (werkingsgebied :via ,(s-prefix "ext:inProvincie")
                              :as "provincie")
+             (vestiging      :via ,(s-prefix "org:hasPrimarySite")
+                             :as "primary-site")
              (bestuurseenheid-classificatie-code :via ,(s-prefix "besluit:classificatie")
                                                  :as "classificatie"))
   :has-many `((contact-punt :via ,(s-prefix "schema:contactPoint")

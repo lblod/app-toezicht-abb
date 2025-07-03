@@ -1,0 +1,17 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX schema: <http://schema.org/>
+PREFIX organisatie: <https://data.vlaanderen.be/ns/organisatie#>
+
+CONSTRUCT {
+  ?s ?p ?o.
+} WHERE {
+  ?s a org:Site;
+    ?p ?o.
+
+  FILTER (?p IN (
+    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>,
+    mu:uuid,
+    organisatie:bestaatUit
+  ))
+}

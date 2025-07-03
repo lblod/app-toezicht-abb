@@ -1,0 +1,29 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX locn: <http://www.w3.org/ns/locn#>
+PREFIX adres: <https://data.vlaanderen.be/ns/adres#>
+PREFIX lblodlg: <http://data.lblod.info/vocabularies/leidinggevenden/>
+
+CONSTRUCT {
+  ?s ?p ?o.
+} WHERE {
+  ?s a locn:Address;
+    ?p ?o.
+
+  FILTER (?p IN (
+    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>,
+    mu:uuid,
+    adres:Adresvoorstelling.busnummer,
+    adres:AdresVoorstelling.huisnummer,
+    locn:thoroughfare,
+    adres:gemeentenaam,
+    adres:land,
+    locn:locatorDesignator,
+    locn:locatorName,
+    locn:poBox,
+    locn:postName,
+    locn:fullAddress,
+    lblodlg:adresRegisterId,
+    adres:verwijstNaar,
+    adres:adresIsGelegenIn
+  ))
+}

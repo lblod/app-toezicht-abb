@@ -41,3 +41,6 @@
 
 (add-prefix "searchToezicht" "http://lblod.data.gift/vocabularies/search-queries-toezicht/")
 (add-prefix "toezicht" "http://mu.semte.ch/vocabularies/ext/supervision/")
+(add-prefix "organisatie" "https://data.vlaanderen.be/ns/organisatie#")
+(add-prefix "adres" "https://data.vlaanderen.be/ns/adres#")
+(add-prefix "locn" "http://www.w3.org/ns/locn#")

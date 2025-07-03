@@ -1,6 +1,8 @@
 # Virtuoso files /data/db
 /data/db/*
 /data/elasticsearch/*
+/data/search/cache
+/data/files/*
 /data/db/virtuoso.ini
 !/data/db/toLoad
 !/data/db/toLoad/*

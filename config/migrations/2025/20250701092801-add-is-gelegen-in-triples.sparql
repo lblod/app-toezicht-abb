@@ -1,0 +1,32 @@
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX organisatie: <https://data.vlaanderen.be/ns/organisatie#>
+PREFIX adres: <https://data.vlaanderen.be/ns/adres#>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX schema: <http://schema.org/>
+PREFIX locn: <http://www.w3.org/ns/locn#>
+
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b> {
+    ?bestuurseenheid org:hasPrimarySite ?primarySite .
+
+    ?primarySite a org:Site .
+    ?primarySite mu:uuid ?primarySiteUuid .
+    ?primarySite organisatie:bestaatUit ?address .
+
+    ?address a locn:Address .
+    ?address mu:uuid ?addressId .
+    ?address adres:adresIsGelegenIn ?provincie .
+  }
+} WHERE {
+  GRAPH <http://mu.semte.ch/graphs/landing-zone/op-public> {
+    ?bestuurseenheid org:hasPrimarySite ?primarySite .
+
+    ?primarySite a org:Site .
+    ?primarySite mu:uuid ?primarySiteUuid .
+    ?primarySite organisatie:bestaatUit ?address .
+
+    ?address a locn:Address .
+    ?address mu:uuid ?addressId .
+    ?address adres:adresIsGelegenIn ?provincie .
+  }
+}
