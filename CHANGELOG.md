@@ -1,4 +1,14 @@
 # Changelog
+## Unreleased
+- Ensure the updated data model of provinces is used. See also: DL-6429
+
+### Deploy Notes
+```
+drc restart migrations # Wait for correct finish.
+drc restart op-public-consumer dispatcher resource
+drc up -d
+/bin/bash scripts/reset-elastic.sh
+```
 
 ## v1.46.0 (2025-06-12)
 
