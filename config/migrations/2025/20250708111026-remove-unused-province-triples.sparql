@@ -3,6 +3,5 @@ PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
 DELETE WHERE {
   GRAPH ?g {
     ?bestuurseenheid ext:inProvincie ?werkingsgebied .
-    ?werkingsgebied ?p ?o .
   }
 }
