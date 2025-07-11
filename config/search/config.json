@@ -79,13 +79,17 @@
           "http://purl.org/pav/createdBy"
         ],
         "province": [
-          "http://purl.org/pav/createdBy",
-          "http://mu.semte.ch/vocabularies/ext/inProvincie",
+          "http://purl.org/pav/createdBy", 
+          "http://www.w3.org/ns/org#hasPrimarySite",
+          "https://data.vlaanderen.be/ns/organisatie#bestaatUit",
+          "https://data.vlaanderen.be/ns/adres#adresIsGelegenIn",
           "http://www.w3.org/2000/01/rdf-schema#label"
         ],
         "provinceURI": [
-          "http://purl.org/pav/createdBy",
-          "http://mu.semte.ch/vocabularies/ext/inProvincie"
+          "http://purl.org/pav/createdBy", 
+          "http://www.w3.org/ns/org#hasPrimarySite",
+          "https://data.vlaanderen.be/ns/organisatie#bestaatUit",
+          "https://data.vlaanderen.be/ns/adres#adresIsGelegenIn"
         ],
         "administrativeUnitClassification": [
           "http://purl.org/pav/createdBy",

@@ -3,6 +3,7 @@ PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX ere: <http://data.lblod.info/vocabularies/erediensten/>
 PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX org: <http://www.w3.org/ns/org#>
 
 CONSTRUCT {
   ?s ?p ?o.
@@ -18,6 +19,7 @@ CONSTRUCT {
     besluit:classificatie,
     dct:identifier,
     skos:altLabel,
-    ere:betrokkenBestuur
+    ere:betrokkenBestuur,
+    org:hasPrimarySite
   ))
 }
