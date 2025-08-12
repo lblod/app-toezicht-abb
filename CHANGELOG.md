@@ -1,6 +1,7 @@
 # Changelog
 ## Unreleased
 - Ensure the updated data model of provinces is used. See also: DL-6429
+- Remove obsolete submissions. See also: DL-6704
 
 ### Deploy Notes
 ```
