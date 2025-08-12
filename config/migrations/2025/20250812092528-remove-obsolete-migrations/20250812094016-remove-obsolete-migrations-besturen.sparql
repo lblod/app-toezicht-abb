@@ -1,0 +1,33 @@
+DELETE {
+  GRAPH ?g {
+    ?submission ?submissionP ?submissionO.
+    ?subject ?subjectP ?subjectO.
+    ?formData ?formDataP ?formDataO.
+    ?remoteDataObject ?remoteDataObjectP ?remoteDataObjectO.
+  }
+}
+WHERE {
+  VALUES ?besluitTypeUri {
+    <https://data.vlaanderen.be/id/concept/BesluitType/41a09f6c-7964-4777-8375-437ef61ed946>
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/3a3ea43f-6631-4a7d-94c6-3a77a445d450>
+  }
+  VALUES ?sentByUri {
+    <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/66ec74fd-8cfc-4e16-99c6-350b35012e86>
+    <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/f9cac08a-13c1-49da-9bcb-f650b0604054>
+  }
+  GRAPH ?g {
+    ?submission a <http://rdf.myexperiment.org/ontologies/base/Submission>;
+                <http://www.w3.org/ns/prov#generated> ?formData;
+        	<http://purl.org/pav/createdBy> ?createdBy;
+                ?submissionP ?submissionO;
+                <http://purl.org/dc/terms/subject> ?subject.
+
+    ?formData <http://mu.semte.ch/vocabularies/ext/decisionType> ?besluitTypeUri;
+              ?formDataP ?formDataO;
+              <http://purl.org/dc/terms/hasPart> ?remoteDataObject.
+
+    ?subject ?subjectP ?subjectO.
+    ?remoteDataObject ?remoteDataObjectP ?remoteDataObjectO.
+    ?createdBy <http://data.vlaanderen.be/ns/besluit#classificatie> ?sentByUri.
+  }
+}
