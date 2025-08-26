@@ -1,4 +1,6 @@
 # Changelog
+## v1.47.1 (2025-08-26)
+ - Fix a couple of issues related to https://github.com/lblod/frontend-toezicht-abb/pull/57/files
 ## v1.47.0 (2025-08-26)
 - Ensure the updated data model of provinces is used. See also: DL-6429
 - Remove document in submission from Gemeente Avelgem [DL-6691]
