@@ -1,4 +1,7 @@
 # Changelog
+## v1.47.2 (2025-08-27)
+ - Bufix: remove obsolete `provincie` call 
+    - See https://github.com/lblod/frontend-toezicht-abb/pull/67 [DL-6777]
 ## v1.47.1 (2025-08-26)
  - Fix a couple of issues related to https://github.com/lblod/frontend-toezicht-abb/pull/57/files
 ## v1.47.0 (2025-08-26)
