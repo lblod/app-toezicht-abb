@@ -1,0 +1,26 @@
+DELETE {
+  GRAPH ?g {
+    ?remoteDataObject ?remoteDataObjectP ?remoteDataObjectO.
+  }
+}
+WHERE {
+  VALUES ?besluitTypeUri {
+    <https://data.vlaanderen.be/id/concept/BesluitType/f56c645d-b8e1-4066-813d-e213f5bc529f>
+  }
+  VALUES ?sentByUri {
+    <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/66ec74fd-8cfc-4e16-99c6-350b35012e86>
+  }
+  GRAPH ?g {
+    ?submission a <http://rdf.myexperiment.org/ontologies/base/Submission>;
+      <http://www.w3.org/ns/prov#generated> ?formData;
+      <http://purl.org/pav/createdBy>/<http://data.vlaanderen.be/ns/besluit#classificatie> ?sentByUri;
+                ?submissionP ?submissionO.
+
+    ?formData <http://mu.semte.ch/vocabularies/ext/decisionType> ?besluitTypeUri;
+              ?formDataP ?formDataO;
+              <http://purl.org/dc/terms/hasPart> ?remoteDataObject.
+              
+    ?remoteDataObject ?remoteDataObjectP ?remoteDataObjectO.
+
+  }
+}
