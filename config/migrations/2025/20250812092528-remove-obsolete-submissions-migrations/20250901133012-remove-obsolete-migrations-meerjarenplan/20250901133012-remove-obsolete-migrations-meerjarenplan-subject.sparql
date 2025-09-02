@@ -14,10 +14,8 @@ WHERE {
     ?submission a <http://rdf.myexperiment.org/ontologies/base/Submission>;
       <http://www.w3.org/ns/prov#generated> ?formData;
       <http://purl.org/pav/createdBy>/<http://data.vlaanderen.be/ns/besluit#classificatie> ?sentByUri;
-                ?submissionP ?submissionO;
                 <http://purl.org/dc/terms/subject> ?subject.
-    ?formData <http://mu.semte.ch/vocabularies/ext/decisionType> ?besluitTypeUri;
-              ?formDataP ?formDataO.
+    ?formData <http://mu.semte.ch/vocabularies/ext/decisionType> ?besluitTypeUri.
     ?subject ?subjectP ?subjectO.
   }
 }
