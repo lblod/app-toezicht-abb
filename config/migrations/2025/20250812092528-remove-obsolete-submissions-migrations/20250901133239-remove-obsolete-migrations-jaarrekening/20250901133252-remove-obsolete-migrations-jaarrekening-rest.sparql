@@ -1,0 +1,26 @@
+DELETE {
+  GRAPH ?g {
+    ?submission ?submissionP ?submissionO.
+    ?formData ?formDataP ?formDataO.
+  }
+}
+WHERE {
+  VALUES ?besluitTypeUri {
+    <https://data.vlaanderen.be/id/concept/BesluitType/e44c535d-4339-4d15-bdbf-d4be6046de2c>
+  }
+  VALUES ?sentByUri {
+    <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/66ec74fd-8cfc-4e16-99c6-350b35012e86>
+  }
+  GRAPH ?g {
+    ?submission a <http://rdf.myexperiment.org/ontologies/base/Submission>;
+                <http://www.w3.org/ns/prov#generated> ?formData;
+        	<http://purl.org/pav/createdBy> ?createdBy;
+                ?submissionP ?submissionO.
+
+    ?formData <http://mu.semte.ch/vocabularies/ext/decisionType> ?besluitTypeUri;
+              ?formDataP ?formDataO.
+
+    ?createdBy <http://data.vlaanderen.be/ns/besluit#classificatie> ?sentByUri.
+  }
+}
+

@@ -1,0 +1,40 @@
+DELETE {
+  GRAPH ?g {
+    ?submission ?submissionP ?submissionO.
+    ?subject ?subjectP ?subjectO.
+    ?formData ?formDataP ?formDataO.
+    ?remoteDataObject ?remoteDataObjectP ?remoteDataObjectO.
+  }
+}
+WHERE {
+  VALUES ?besluitTypeUri {
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/4f938e44-8bce-4d3a-b5a7-b84754fe981a>
+    <https://data.vlaanderen.be/id/concept/BesluitType/df261490-cc74-4f80-b783-41c35e720b46>
+    <https://data.vlaanderen.be/id/concept/BesluitType/3fcf7dba-2e5b-4955-a489-6dd8285c013b>
+    <https://data.vlaanderen.be/id/concept/BesluitType/e6425cd1-26f2-4cd8-aa0f-1e9b65619c3a>
+    <https://data.vlaanderen.be/id/concept/BesluitType/e2928231-d377-48c7-98b4-3bb2f7de65db>
+    <https://data.vlaanderen.be/id/concept/BesluitType/8d8a75bf-f639-44ae-bcce-50b8f760cc3c>
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/863caf68-97c9-4ee0-adb5-620577ea8146>
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/24743b26-e0fb-4c14-8c82-5cd271289b0e>
+    <https://data.vlaanderen.be/id/concept/BesluitType/b25faa84-3ab5-47ae-98c0-1b389c77b827>
+  }
+  VALUES ?sentByUri {
+    <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>
+    <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>
+  }
+  GRAPH ?g {
+    ?submission a <http://rdf.myexperiment.org/ontologies/base/Submission>;
+                <http://www.w3.org/ns/prov#generated> ?formData;
+        	<http://purl.org/pav/createdBy> ?createdBy;
+                ?submissionP ?submissionO;
+                <http://purl.org/dc/terms/subject> ?subject.
+
+    ?formData <http://mu.semte.ch/vocabularies/ext/decisionType> ?besluitTypeUri;
+              ?formDataP ?formDataO;
+              <http://purl.org/dc/terms/hasPart> ?remoteDataObject.
+
+    ?subject ?subjectP ?subjectO.
+    ?remoteDataObject ?remoteDataObjectP ?remoteDataObjectO.
+    ?createdBy <http://data.vlaanderen.be/ns/besluit#classificatie> ?sentByUri.
+  }
+}
