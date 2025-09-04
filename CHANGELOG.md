@@ -1,4 +1,17 @@
 # Changelog
+
+## Unreleased 
+
+### General
+
+- Remove obsolete submissions [DL-6704]
+
+### Deploy Notes
+
+```
+drc restart migrations && drc logs -ft --tail=200 migrations
+```
+
 ## v1.47.2 (2025-08-27)
  - Bufix: remove obsolete `provincie` call 
     - See https://github.com/lblod/frontend-toezicht-abb/pull/67 [DL-6777]
