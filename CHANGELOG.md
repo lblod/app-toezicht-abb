@@ -1,8 +1,12 @@
 # Changelog
-## Unreleased
+## v1.47.2 (2025-08-27)
+ - Bufix: remove obsolete `provincie` call 
+    - See https://github.com/lblod/frontend-toezicht-abb/pull/67 [DL-6777]
+## v1.47.1 (2025-08-26)
+ - Fix a couple of issues related to https://github.com/lblod/frontend-toezicht-abb/pull/57/files
+## v1.47.0 (2025-08-26)
 - Ensure the updated data model of provinces is used. See also: DL-6429
-- Remove obsolete submissions. See also: DL-6704
-
+- Remove document in submission from Gemeente Avelgem [DL-6691]
 ### Deploy Notes
 ```
 drc restart migrations # Wait for correct finish.
@@ -16,6 +20,7 @@ drc up -d
 ### General
 
 - Update form of LEKP - Fietspaden [DL-6612]
+- Remove document in submission from Gemeente Avelgem [DL-6691]
 
 ### Deploy Notes
 
