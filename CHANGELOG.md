@@ -1,4 +1,7 @@
 # Changelog
+## Unreleased
+### Toezicht
+ - Update URI form "Afwijking principes regiovorming" [DL-6775]
 ## v1.47.2 (2025-08-27)
  - Bufix: remove obsolete `provincie` call 
     - See https://github.com/lblod/frontend-toezicht-abb/pull/67 [DL-6777]
