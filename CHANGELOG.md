@@ -7,6 +7,8 @@
 ## v1.47.0 (2025-08-26)
 - Ensure the updated data model of provinces is used. See also: DL-6429
 - Remove document in submission from Gemeente Avelgem [DL-6691]
+- Swap `mu-auth` for `sparql-parser` [DL-6578]
+
 ### Deploy Notes
 ```
 drc restart migrations # Wait for correct finish.
