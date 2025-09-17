@@ -31,12 +31,13 @@ services:
     restart: always
     logging: *default-logging
   database:
-    image: semtech/mu-authorization:0.6.0-beta.8
+    image: semtech/sparql-parser:0.0.14
     environment:
       MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
-      DATABASE_OVERLOAD_RECOVERY: "true"
+      LISP_DYNAMIC_SPACE_SIZE: 8192
     volumes:
       - ./config/authorization:/config
+      - ./data/authorization:/data
     labels:
       - "logging=true"
     restart: always
