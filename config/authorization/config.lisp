@@ -44,12 +44,12 @@
 
 (type-cache::add-type-for-prefix "http://mu.semte.ch/sessions/" "http://mu.semte.ch/vocabularies/session/Session")
 
-(define-graph public ("http://mu.semte.ch/graphs/public")
+(define-graph graph-public ("http://mu.semte.ch/graphs/public")
   ("foaf:Person" -> _)
   ("foaf:OnlineAccount" -> _)
   ("besluit:Bestuurseenheid" -> _))
 
-(define-graph readers ("http://mu.semte.ch/graphs/organizations/")
+(define-graph graph-readers ("http://mu.semte.ch/graphs/organizations/")
   ("foaf:Person" -> _)
   ("foaf:OnlineAccount" -> _)
   ("adms:Identifier" -> _)
@@ -79,17 +79,17 @@
   ("http://lblod.data.gift/vocabularies/search-queries-toezicht/SearchQuery" -> _)
   ("org:Site" -> _))
 
-(define-graph users ("http://mu.semte.ch/graphs/organizations/")
+(define-graph graph-users ("http://mu.semte.ch/graphs/organizations/")
   ("foaf:Person" -> _)
   ("http://lblod.data.gift/vocabularies/search-queries-toezicht/SearchQuery" -> _))
 
 
-(define-graph editors ("http://mu.semte.ch/graphs/organizations/")
+(define-graph graph-editors ("http://mu.semte.ch/graphs/organizations/")
   ("schema:Review" -> _))
 
 (supply-allowed-group "public")
 
-(supply-allowed-group "session-group"
+(supply-allowed-group "readers"
   :parameters ("session_group")
   :query "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
           PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
@@ -97,7 +97,15 @@
             <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group
             }")
 
-(supply-allowed-group "session-group-editor"
+(supply-allowed-group "users"
+  :parameters ("session_group")
+  :query "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+          PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+          SELECT DISTINCT ?session_group WHERE {
+            <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group
+            }")
+
+(supply-allowed-group "editors"
   :parameters ("session_group")
   :query "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
           PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
@@ -108,17 +116,17 @@
             }")
 
 (grant (read)
-  :to-graph (public)
+  :to-graph (graph-public)
   :for-allowed-group "public")
 
 (grant (read)
-  :to-graph (readers)
-  :for-allowed-group "session-group")
+  :to-graph (graph-readers)
+  :for-allowed-group "readers")
 
 (grant (write)
-  :to-graph (users)
-  :for-allowed-group "session-group")
+  :to-graph (graph-users)
+  :for-allowed-group "users")
 
 (grant (write)
-  :to-graph (editors)
-  :for-allowed-group "session-group-editor")
+  :to-graph (graph-editors)
+  :for-allowed-group "editors")
