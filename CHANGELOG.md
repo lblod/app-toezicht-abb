@@ -1,5 +1,5 @@
 # Changelog
-## Unreleased
+## v1.48.0 (2025-09-17)
 ### Toezicht
  - Update URI form "Afwijking principes regiovorming" [DL-6775]
 
