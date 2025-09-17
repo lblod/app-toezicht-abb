@@ -90,7 +90,7 @@
 (supply-allowed-group "public")
 
 (supply-allowed-group "session-group"
-  :parameters ("session-group")
+  :parameters ("session_group")
   :query "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
           PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
           SELECT DISTINCT ?session_group WHERE {
@@ -98,7 +98,7 @@
             }")
 
 (supply-allowed-group "session-group-editor"
-  :parameters ("session-group")
+  :parameters ("session_group")
   :query "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
           PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
           SELECT DISTINCT ?session_group WHERE {
