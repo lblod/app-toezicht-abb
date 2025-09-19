@@ -1,5 +1,4 @@
 # Changelog
-
 ## Unreleased
 - Swap `mu-auth` for `sparql-parser` [DL-6578]
 
@@ -7,6 +6,8 @@
 ```
 drc up -d database
 ```
+## v1.48.1 (2025-09-19)
+- Hotfix 'afwijking principes regiovorming' from BesluitDocumentType to BesluitType [DL-6775]
 
 ## v1.48.0 (2025-09-17)
 ### Toezicht
