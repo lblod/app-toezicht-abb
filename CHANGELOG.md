@@ -1,4 +1,7 @@
 # Changelog
+## v1.48.1 (2025-09-19)
+- Hotfix 'afwijking principes regiovorming' from BesluitDocumentType to BesluitType [DL-6775]
+
 ## v1.48.0 (2025-09-17)
 ### Toezicht
  - Update URI form "Afwijking principes regiovorming" [DL-6775]
