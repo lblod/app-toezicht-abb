@@ -1,25 +1,36 @@
 # Changelog
-
-## Unreleased 
-
-### General
-
+## Unreleased
+- Swap `mu-auth` for `sparql-parser` [DL-6578]
 - Remove obsolete submissions [DL-6704]
 
-### Deploy Notes
+### Deploy notes
+```
+drc up -d database
+drc restart migrations && drc logs -ft --tail=200 migrations
 
 ```
+## v1.48.1 (2025-09-19)
+- Hotfix 'afwijking principes regiovorming' from BesluitDocumentType to BesluitType [DL-6775]
+
+## v1.48.0 (2025-09-17)
+### Toezicht
+ - Update URI form "Afwijking principes regiovorming" [DL-6775]
+
+### Deploy Notes
+```
 drc restart migrations && drc logs -ft --tail=200 migrations
+drc up -d enrich-submission
 ```
 
 ## v1.47.2 (2025-08-27)
- - Bufix: remove obsolete `provincie` call 
+ - Bufix: remove obsolete `provincie` call
     - See https://github.com/lblod/frontend-toezicht-abb/pull/67 [DL-6777]
 ## v1.47.1 (2025-08-26)
  - Fix a couple of issues related to https://github.com/lblod/frontend-toezicht-abb/pull/57/files
 ## v1.47.0 (2025-08-26)
 - Ensure the updated data model of provinces is used. See also: DL-6429
 - Remove document in submission from Gemeente Avelgem [DL-6691]
+
 ### Deploy Notes
 ```
 drc restart migrations # Wait for correct finish.
