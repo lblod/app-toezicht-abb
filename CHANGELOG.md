@@ -1,8 +1,9 @@
 # Changelog
 ## Unreleased
+- Databank Toezicht ABB: Difference between search and supervision database [DL-6781]
+## v1.49.0 (2025-10-09)
 - Swap `mu-auth` for `sparql-parser` [DL-6578]
 - Remove obsolete submissions [DL-6704]
-- Databank Toezicht ABB: Difference between search and supervision database [DL-6781]
 ### Deploy notes
 ```
 drc up -d database
