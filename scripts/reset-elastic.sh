@@ -11,7 +11,7 @@ echo "warning this will run queries on the triplestore and delete containers, yo
 sleep 3
 eval "$DRC_COMMAND rm -fs elasticsearch search"
 sudo rm -rf data/elasticsearch/
-eval "$DRC_COMMAND exec -T triplestore isql-v <<EOF
+eval "$DRC_COMMAND exec -T virtuoso isql-v <<EOF
 SPARQL DELETE WHERE {   GRAPH <http://mu.semte.ch/authorization> {     ?s ?p ?o.   } };
 exec('checkpoint');
 exit;
