@@ -1,6 +1,16 @@
 # Changelog
 ## Unreleased
 - Databank Toezicht ABB: Difference between search and supervision database [DL-6781]
+- Bump elasticsearch base image, fix + run reset-elastic script [DL-6945]
+
+### Deploy notes
+```
+drc up -d elasticsearch
+/bin/bash scripts/reset-elastic.sh
+# wait until re-index is finished
+drc up -d
+```
+
 ## v1.49.0 (2025-10-09)
 - Swap `mu-auth` for `sparql-parser` [DL-6578]
 - Remove obsolete submissions [DL-6704]
