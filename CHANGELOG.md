@@ -2,8 +2,17 @@
 ## Unreleased
 - Databank Toezicht ABB: Difference between search and supervision database [DL-6781]
 - Bump elasticsearch base image, fix + run reset-elastic script [DL-6945]
+- Update forms [DL-6988]
 
 ### Deploy notes
+
+*update form*
+```
+drc restart migrations && drc logs -ft --tail=200 migrations
+drc up -d enrich-submission
+```
+
+*reset elasticsearch indx*
 ```
 drc up -d elasticsearch
 /bin/bash scripts/reset-elastic.sh
