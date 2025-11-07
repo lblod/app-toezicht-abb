@@ -1,5 +1,5 @@
 # Changelog
-## Unreleased
+## v1.50.0 (2025-11-07)
 - Databank Toezicht ABB: Difference between search and supervision database [DL-6781]
 - Bump elasticsearch base image, fix + run reset-elastic script [DL-6945]
 - Update forms [DL-6988]
