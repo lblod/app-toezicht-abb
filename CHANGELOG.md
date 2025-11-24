@@ -1,4 +1,13 @@
 # Changelog
+## Unreleased
+- Databank Toezicht ABB: Include KBO-number in bestuurseenheden filter [DL-6558]
+
+### Deploy notes
+```
+drc up -d
+drc restart migrations resource cache
+```
+
 ## v1.50.0 (2025-11-07)
 - Databank Toezicht ABB: Difference between search and supervision database [DL-6781]
 - Bump elasticsearch base image, fix + run reset-elastic script [DL-6945]
