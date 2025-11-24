@@ -5,6 +5,9 @@ DELETE {
   GRAPH ?g {
     ?submission ?p ?o .
     ?submissionS ?rP ?submission .
+    ?subject ?subjectP ?subjectO.
+    ?formData ?formDataP ?formDataO.
+    ?remoteDataObject ?remoteDataObjectP ?remoteDataObjectO.
   }
 } WHERE {
   GRAPH ?g {
@@ -24,6 +27,17 @@ DELETE {
       ?organization besluit:classificatie ?class.
 
       ?submission ?p ?o .
+      OPTIONAL {
+        ?submission <http://www.w3.org/ns/prov#generated> ?formData.
+        ?formData <http://mu.semte.ch/vocabularies/ext/decisionType> ?besluitTypeUri;
+          ?formDataP ?formDataO;
+          <http://purl.org/dc/terms/hasPart> ?remoteDataObject.
+        ?remoteDataObject ?remoteDataObjectP ?remoteDataObjectO.
+      }
+      OPTIONAL {
+        ?submission <http://purl.org/dc/terms/subject> ?subject.
+        ?subject ?subjectP ?subjectO.
+      }
       OPTIONAL {
         ?submissionS ?rP ?submission .
       }
