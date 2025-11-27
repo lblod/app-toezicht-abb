@@ -1,0 +1,33 @@
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX meb: <http://rdf.myexperiment.org/ontologies/base/>
+
+DELETE {
+  GRAPH ?g {
+    ?formData ?formDataP ?formDataO.
+    ?remoteDataObject ?remoteDataObjectP ?remoteDataObjectO.
+  }
+} WHERE {
+  GRAPH ?g {
+    VALUES ?class {
+      # Bestuur van de eredienst
+      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/66ec74fd-8cfc-4e16-99c6-350b35012e86>
+      # Centraal bestuur van de eredienst
+      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/f9cac08a-13c1-49da-9bcb-f650b0604054>
+      # Representatief orgaan
+      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/36372fad-0358-499c-a4e3-f412d2eae213>
+      # Representatief orgaan (not sure why 2 different classes)
+      <http://data.vlaanderen.be/id/concept/RepresentatiefOrgaanClassificatieCode/89a00b5a-024f-4630-a722-65a5e68967e5>
+    }
+
+    ?submission a meb:Submission .
+    ?submission <http://purl.org/pav/createdBy> ?organization .
+    ?organization besluit:classificatie ?class.
+
+    ?submission <http://www.w3.org/ns/prov#generated> ?formData.
+
+    ?formData <http://mu.semte.ch/vocabularies/ext/decisionType> ?besluitTypeUri;
+      ?formDataP ?formDataO;
+      <http://purl.org/dc/terms/hasPart> ?remoteDataObject.
+    ?remoteDataObject ?remoteDataObjectP ?remoteDataObjectO.
+   }
+}

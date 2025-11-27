@@ -6,8 +6,6 @@ DELETE {
     ?submission ?p ?o .
     ?submissionS ?rP ?submission .
     ?subject ?subjectP ?subjectO.
-    ?formData ?formDataP ?formDataO.
-    ?remoteDataObject ?remoteDataObjectP ?remoteDataObjectO.
   }
 } WHERE {
   GRAPH ?g {
@@ -21,26 +19,19 @@ DELETE {
       # Representatief orgaan (not sure why 2 different classes)
       <http://data.vlaanderen.be/id/concept/RepresentatiefOrgaanClassificatieCode/89a00b5a-024f-4630-a722-65a5e68967e5>
     }
-    {
-      ?submission a meb:Submission .
-      ?submission <http://purl.org/pav/createdBy> ?organization .
-      ?organization besluit:classificatie ?class.
 
-      ?submission ?p ?o .
-      OPTIONAL {
-        ?submission <http://www.w3.org/ns/prov#generated> ?formData.
-        ?formData <http://mu.semte.ch/vocabularies/ext/decisionType> ?besluitTypeUri;
-          ?formDataP ?formDataO;
-          <http://purl.org/dc/terms/hasPart> ?remoteDataObject.
-        ?remoteDataObject ?remoteDataObjectP ?remoteDataObjectO.
-      }
-      OPTIONAL {
-        ?submission <http://purl.org/dc/terms/subject> ?subject.
-        ?subject ?subjectP ?subjectO.
-      }
-      OPTIONAL {
-        ?submissionS ?rP ?submission .
-      }
-    } 
-  }
+    ?submission a meb:Submission .
+    ?submission <http://purl.org/pav/createdBy> ?organization .
+    ?organization besluit:classificatie ?class.
+
+    ?submission ?p ?o .
+
+    ?submission <http://purl.org/dc/terms/subject> ?subject.
+
+    ?subject ?subjectP ?subjectO.
+
+    OPTIONAL {
+      ?submissionS ?rP ?submission .
+    }
+   }
 }
