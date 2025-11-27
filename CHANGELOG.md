@@ -1,11 +1,12 @@
 # Changelog
 ## Unreleased
- - Remove all submissions from eredienst besturen. [DL-6997]
- - Remove classificatie eredienstbesturen from filters. [DL-6999]
-
-#### Deploy instructions
+- Databank Toezicht ABB: Include KBO-number in bestuurseenheden filter [DL-6558]
+- Remove all submissions from eredienst besturen. [DL-6997]
+- Remove classificatie eredienstbesturen from filters. [DL-6999]
+### Deploy instructions
 ```
-drc restart migratons
+drc up -d
+drc restart migrations resource cache
 drc exec search-query-management wget --post-data='' http://localhost/search-query-forms/initiate-meta-construction
 ```
 

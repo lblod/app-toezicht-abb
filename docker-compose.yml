@@ -7,7 +7,7 @@ x-logging:
 
 services:
   toezicht-abb:
-    image: lblod/frontend-toezicht-abb:0.30.4
+    image: lblod/frontend-toezicht-abb:0.30.5
     volumes:
       - ./config/frontend:/config
     labels:
@@ -175,7 +175,7 @@ services:
     restart: always
     logging: *default-logging
   search-query-management:
-    image: lblod/toezicht-search-query-management-service:0.3.6
+    image: lblod/toezicht-search-query-management-service:0.3.8
     volumes:
       - ./config/search-query:/share/search-query
     labels:
