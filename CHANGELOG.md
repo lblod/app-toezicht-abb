@@ -6,7 +6,7 @@
 ### Deploy instructions
 ```
 drc up -d
-drc restart migrations resource cache
+drc restart migrations resource cache op-public-consumer
 drc exec search-query-management wget --post-data='' http://localhost/search-query-forms/initiate-meta-construction
 ```
 
