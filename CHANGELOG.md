@@ -1,4 +1,14 @@
 # Changelog
+## Unreleased
+ - Remove all submissions from eredienst besturen. [DL-6997]
+ - Remove classificatie eredienstbesturen from filters. [DL-6999]
+
+#### Deploy instructions
+```
+drc restart migratons
+drc exec search-query-management wget --post-data='' http://localhost/search-query-forms/initiate-meta-construction
+```
+
 ## v1.50.0 (2025-11-07)
 - Databank Toezicht ABB: Difference between search and supervision database [DL-6781]
 - Bump elasticsearch base image, fix + run reset-elastic script [DL-6945]
