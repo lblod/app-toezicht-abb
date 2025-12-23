@@ -1,8 +1,9 @@
 # Changelog
-## Unreleased
+## v1.51.0 (2025-12-23)
 - Databank Toezicht ABB: Include KBO-number in bestuurseenheden filter [DL-6558]
 - Remove all submissions from eredienst besturen. [DL-6997]
 - Remove classificatie eredienstbesturen from filters. [DL-6999]
+
 ### Deploy instructions
 ```
 drc up -d
