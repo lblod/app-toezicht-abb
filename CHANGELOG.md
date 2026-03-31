@@ -1,4 +1,12 @@
 # Changelog
+## Unreleased
+- Removed empty submissions [DL-7260] [DL-7272]
+
+### Deploy instructions
+```
+drc restart migrations
+```
+
 ## v1.51.0 (2025-12-23)
 - Databank Toezicht ABB: Include KBO-number in bestuurseenheden filter [DL-6558]
 - Remove all submissions from eredienst besturen. [DL-6997]
