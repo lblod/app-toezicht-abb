@@ -97,8 +97,8 @@ defmodule Dispatcher do
   # Submissions
   #################################################################
 
-  get "/remote-urls/*path", @json do
-    Proxy.forward conn, path, "http://cache/remote-urls/"
+  get "/remote-data-objects/*path", @json do
+    Proxy.forward conn, path, "http://cache/remote-data-objects/"
   end
 
   get "/inzendingen-voor-toezicht/*path", @json do

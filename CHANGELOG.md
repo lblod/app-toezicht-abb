@@ -1,4 +1,13 @@
 # Changelog
+## Unreleased
+- Adjust frontend for new URL-formatting [DL-7236]
+
+### Deploy instructions
+```
+drc pull toezicht-abb && drc up -d toezicht-abb
+drc restart dispatcher resource
+```
+
 ## v1.51.0 (2025-12-23)
 - Databank Toezicht ABB: Include KBO-number in bestuurseenheden filter [DL-6558]
 - Remove all submissions from eredienst besturen. [DL-6997]
