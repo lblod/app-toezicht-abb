@@ -1,5 +1,5 @@
 # Changelog
-## Unreleased
+## v1.51.1 (2026-04-20)
 - Adjust frontend for new URL-formatting [DL-7236]
 
 ### Deploy instructions
