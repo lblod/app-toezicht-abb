@@ -1,4 +1,15 @@
 # Changelog
+
+## Unreleased
+- frontend [v0.31.1](https://github.com/lblod/frontend-toezicht-abb/blob/85a1fb8e6894e690d27c8f7d971115a3433ca38b/CHANGELOG.md#bug-bug-fix)
+
+### Deploy instructions
+- Remove the `toezicht-abb` image override from the `docker-compose.overrides.yml` file
+
+```
+drc up -d toezicht-abb
+```
+
 ## v1.51.1 (2026-04-20)
 - Adjust frontend for new URL-formatting [DL-7236]
 
