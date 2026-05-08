@@ -1,4 +1,10 @@
 # Changelog
+## Unreleased
+- Bump acm-login service [DL-7346]
+## Deploy notes
+```
+drc up -d login
+```
 
 ## v1.51.2
 - frontend [v0.31.1](https://github.com/lblod/frontend-toezicht-abb/blob/85a1fb8e6894e690d27c8f7d971115a3433ca38b/CHANGELOG.md#bug-bug-fix)
