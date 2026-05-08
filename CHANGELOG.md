@@ -1,9 +1,10 @@
 # Changelog
 ## Unreleased
 - Bump acm-login service [DL-7346]
+- Bump frontend [DL-7353]
 ## Deploy notes
 ```
-drc up -d login
+drc up -d login toezicht-abb
 ```
 
 ## v1.51.2
