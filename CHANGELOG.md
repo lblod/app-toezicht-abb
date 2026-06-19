@@ -1,4 +1,15 @@
 # Changelog
+
+## v1.52.4
+- [DL-7400] (Attempt) At fixing the inconsistent search results.
+  - Probably it is related to TIKA and mu-search default search parameters.
+  - See also: https://github.com/lblod/frontend-toezicht-abb/pull/81
+
+### Deploy notes
+```
+drc up -d toezicht-abb
+```
+
 ## v1.51.3
 - Bump acm-login service [DL-7346]
 - Bump frontend [DL-7353]
