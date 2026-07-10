@@ -1,4 +1,12 @@
 # Changelog
+## Unreleased
+- bump frontend [DL-7363]
+
+### Deploy instructions
+
+```
+docker compose up -d toezicht-abb
+```
 
 ## v1.52.4
 - [DL-7400] (Attempt) At fixing the inconsistent search results.
