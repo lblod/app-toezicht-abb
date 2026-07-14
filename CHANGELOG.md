@@ -1,11 +1,14 @@
 # Changelog
 ## Unreleased
 - bump frontend [DL-7363]
+- Update forms [DL-7470]
 
 ### Deploy instructions
 
 ```
-docker compose up -d toezicht-abb
+drc up -d toezicht-abb
+drc restart migrations && drc logs -ft --tail=200 migrations
+drc up -d enrich-submission
 ```
 
 ## v1.52.4
