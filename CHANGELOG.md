@@ -1,5 +1,5 @@
 # Changelog
-## Unreleased
+## v1.53.0 (2026-07-14)
 - bump frontend [DL-7363]
 - Update forms [DL-7470]
 
