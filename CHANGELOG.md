@@ -1,4 +1,15 @@
 # Changelog
+## Unreleased
+- Bump core semtech services: `mu-identifier` 1.11.0, `mu-dispatcher` 2.1.1, `sparql-parser` 0.0.15, `mu-cache` 2.2.0, `mu-cl-resources` 1.27.2, `mu-file-service` 3.5.1, `mu-search` 0.12.1, `mu-search-elastic-backend` 1.3.1.
+
+### Deploy notes
+The Elasticsearch backend now runs Elasticsearch 9.2. The existing data directory is not compatible and must be reindexed.
+```
+drc up -d
+/bin/bash scripts/reset-elastic.sh
+# wait until re-index is finished
+```
+
 ## v1.53.0 (2026-07-14)
 - bump frontend [DL-7363]
 - Update forms [DL-7470]
